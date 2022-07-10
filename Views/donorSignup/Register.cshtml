@@ -1,0 +1,231 @@
+﻿@model ProtectYou.Models.RegistrationModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link href="~/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/css/material-design-iconic-font.css" rel="stylesheet" />
+
+    <!-- Main css -->
+    <link href="~/bootstrap/css/logins.css" rel="stylesheet" />
+    <script src="~/js/SignupScript.js"></script>
+
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <style>
+
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            width: 140px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            left: 700px;
+            top: 50px;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #2980B9;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            position: relative;
+            left: 700px;
+            top: 50px;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="main">
+
+
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+
+
+
+                <div class="signup-content">
+
+                    <!-- Drop Down -->
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Sign up as?</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="https://localhost:44343/signup">Needy Person</a>
+                            <a href="https://localhost:44343/donor">Donor</a>
+                            <a href="#contact">NGO</a>
+                        </div>
+                    </div>
+
+                    <!-- Drop Down -->
+
+                    <div class="signup-form">
+                        <h2 class="form-title">Signup as Donor</h2>
+
+
+
+                        <form method="post" action="/donorSignup" id="formSignup">
+                            <div id="contentMessage">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required />
+
+                            </div>
+                            <div class="form-group">
+                                <label for="number"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="number" name="number" id="number" placeholder="Contact Number" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="zmdi zmdi-pin animated infinite wobble zmdi-hc-fw"></i></label>
+                                <input type="text" name="address" id="address" placeholder="Address" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="gender"><i class="zmdi zmdi-male-female"></i></label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender &nbsp;&nbsp;&nbsp;&nbsp;
+                                <select name="gender" id="gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Others">Others</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="occupation"><i class="zmdi zmdi-case"></i></label>
+                                <input type="text" name="occupation" id="occupation" placeholder="Occupation" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" required />
+
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required />
+                            </div>
+
+                            <div class="form-group form-button">
+                                <input type="button" name="signup" id="signup" class="form-submit" value="Register" />
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="~/img/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="https://localhost:44343/signin" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/main.js"></script>
+
+    <script type="text/jscript">
+        $('#signup').click(function (e) {
+            e.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var number = document.getElementById("number").value;
+            var address = document.getElementById("address").value;
+            var gender = document.getElementById("gender").value;
+            var occupation = document.getElementById("occupation").value;
+            var pass = document.getElementById("pass").value;
+            var re_pass = document.getElementById("re_pass").value;
+
+            if (name && email && number && address && gender && occupation && pass && re_pass) {
+                var url = "/donorSignup";
+                var myForm = $('#formSignup').serialize();
+                console.log("click");
+                $.post(url, myForm, function (data) {
+                    console.log(data);
+                    if (data != "Success") {
+                        document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">' + data + '</div >';
+                    }
+
+                });
+            } else {
+                document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">Form fields should not empty.</div >';
+            }
+
+
+
+
+        })
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+
+
+
+

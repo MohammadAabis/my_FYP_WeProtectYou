@@ -1,0 +1,993 @@
+html{
+scroll-behavior: smooth;
+}
+
+body{
+    background: #ece9e6;   
+    margin: 0;
+    padding: 0;
+}
+
+header{
+
+    overflow:hidden;
+    width: 100%;
+   height: auto;
+}
+
+
+
+#header_logo{
+    width: 20%;
+    height: 100px;
+    float: left;
+    margin-left: 7%;
+
+}
+
+#header_logo img{
+    height: 100%;
+}
+
+
+#menus{
+float: right;
+height: auto;
+
+}
+
+#menus li{
+padding-top: 20px;
+padding-right: 30px;
+list-style: none;
+float: left;
+
+}
+
+#menus ul a{
+font-size: 27px;
+text-decoration: none;
+color:black;
+font-family: 'Voltaire', sans-serif;
+
+
+}
+
+
+#menus li :hover{
+color: teal;
+}  
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #ece9e6;
+    min-width: 160px;
+    z-index: 3;
+  }  
+  .dropdown-content a {
+    color: black;
+    border-bottom: 2px solid black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+    
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+/* main */
+
+
+#main{
+    background: linear-gradient( #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main_grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+}
+
+.main_left{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+
+.main_right img{
+    max-width: 100%;
+}
+
+.main_left button{
+    font-size: 20px;
+    border-radius: 36px;
+    padding: 10px 20px;
+    
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* 
+.vid-parent{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #225470;
+    z-index: 1;
+    opacity: 0.8;    
+}
+
+
+.video-content img{
+    position:absolute;
+    top: 25%;
+    left: 40%;
+    z-index: 2;
+}
+
+.video-content h2{
+    position: absolute;
+    z-index: 2;
+    top: 44%;
+    left: 30%;
+    color: white;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 60px; 
+}
+
+.video-content p{
+
+    position: absolute;
+    z-index: 2;
+    top: 62%;
+    left: 29%;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-size: 22px;
+
+}
+
+.video-content button{
+    position: absolute;
+    z-index: 2;
+    top: 81%;
+    left: 42%;
+
+    font-size: 20px;
+    border-radius: 36px;
+    padding: 10px;
+    
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.video-content button:hover{
+    background-color: seagreen;
+    
+}
+ */
+
+
+
+
+/* aboutus */
+
+
+
+#aboutus{
+background: linear-gradient( #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: auto;
+    
+}
+
+
+.heading_aboutus{
+    
+
+    margin-top: 10px;
+
+    font-family: 'Voltaire', sans-serif;
+font-size: 50px;
+text-align: center;
+color:rgb(236, 228, 228);
+
+
+
+}
+
+
+
+
+.aboutus{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.why{
+    margin-top: 2%;
+    min-width: 300px ;
+    max-width: 400px;
+    height: 300px;
+
+}
+
+.whyimg{
+    display: flex;
+    justify-content: center;
+}
+
+.why p{
+    font-size: 20px;
+    word-spacing:3px;
+    color: #f8f9fa;
+    font-family:sans-serif;
+    text-align: center;
+}
+
+.why h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* COURSES */
+
+
+#courses{
+    background-color: white;
+}
+
+.ourcourses{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.ourcourses img{
+    width: 40%;
+}
+
+#courses{
+    width: auto;
+}
+
+
+.allcourses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course{
+    margin: 40px;
+    min-width: 300px;	
+    height: 330px;
+    box-shadow: 0 0 10px 5px;
+    background-color: rgb(231, 231, 231);
+}
+
+
+.course-detail:hover{
+    background-color: rgb(245, 96, 96);
+    color:white;
+}  
+
+
+
+
+.course-detail{
+    text-align: center;
+    padding-top: 15px;
+    height: 165px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+.course-img img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.enrolbuttons{
+
+    font-size: 20px;
+    padding: 10px;
+    
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* FORMS */
+/* .Registraion */
+
+
+
+.joinus{
+    height: 140px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.banner-title{
+    font-family: 'Voltaire', sans-serif;
+    font-size: 45px;
+    margin:0
+}
+
+.Registraion-flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.Banner-image img{
+   max-width: 100%;
+}
+
+
+.signup h1{
+    text-align: center;
+    background-color: teal;
+    padding: 20px;
+    color: white;
+
+    border-radius: 10px 100px;
+
+}
+
+.signup form{
+    margin: 20px;
+    border: 5px solid black;
+    padding:0 30px 30px 30px;
+}
+
+
+.login h1{
+    text-align: center;
+    background-color: teal;
+    padding: 20px;
+    color: white;
+
+    border-radius: 10px 100px;
+
+}
+
+.login form{
+    margin: 20px;
+    border: 5px solid black;
+    padding:0 30px 30px 30px;
+}
+
+
+::placeholder{
+    color:teal;
+    padding: 10px;
+}
+
+form input{
+    margin-top: 10px;
+    background-color: lightgray;
+    border: none;
+    font-size: 20px;
+    height: 35px;
+}
+
+
+label{
+
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.keepmelogin{
+    margin-left: 50px;
+}
+
+
+
+form button{
+
+    font-size: 20px;
+    padding: 10px;
+    
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    margin-left: 70px;
+
+}
+
+/* socialmedia */
+
+.socialtitle{
+    padding-top: 50px;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 45px;
+    text-align: center;
+    
+}
+
+.socialimage{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.socialimage img{
+    width: 80px;
+    cursor: pointer;
+}
+
+
+.socialimage img:hover{
+    transform:translateY(-10px);
+   
+}
+
+
+/* footer */
+
+#footer{
+    background-color: #203A43;
+    width: auto;
+    /* height: 350px; */
+}
+
+
+.footermain{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.f1{
+ 
+    width: 300px;
+    height: 300px;
+    
+}
+
+.f1 p{
+
+    
+    color: white;
+    font-size: 22px;
+    word-spacing: 10px;
+
+}
+
+
+.f1 h2{
+    text-decoration: underline;
+    color: white; 
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* text-align: center; */
+}
+
+
+::marker{
+    color: white;
+}
+
+.f1 li{
+    padding-top: 14px;
+    
+}
+
+.f1 a{
+    color: wheat;
+    text-decoration: none;
+
+    font-size: 20px;
+}
+
+
+/* SIGNUP PAGE */
+
+.signup_page{
+
+    display: flex;
+    margin: 5% auto;
+    width: 60%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.7);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+border-radius: 10px;
+flex-wrap: wrap;
+}
+
+.signupbox{
+    width:400px;
+    height: auto;
+}
+
+
+.box_left{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Voltaire', sans-serif;
+}
+
+.socialimage2 img{
+    width: 60px;
+    cursor: pointer;
+}
+
+/* this line should be rmove in mobile version */
+.verline{
+    border-right: 2px solid rgb(88, 82, 82);
+    margin-top: 50px;
+    height: 400px;
+  
+}
+
+
+.signup_inputs input{
+
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid white;
+    color: white;
+    accent-color: tomato;
+
+}
+
+.box_right{
+    color: white;
+    text-align: center;
+
+}
+
+.regbtn{
+    font-size: 20px;
+    border-radius: 36px;
+    padding: 10px;
+    
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-right: 70px;
+}
+
+.box_right h2{
+    font-size: 50px;
+    font-family: 'Voltaire', sans-serif;
+}
+
+
+
+
+/* Admin Console */
+
+
+
+.side-menu ul{
+    padding-left: 10px;
+}
+
+.side-menu li{
+    margin: 0 !important;
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.side-menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.side-menu li:hover{
+
+    
+    color: black;
+    background-color: orange;
+
+}
+
+
+.side-menu{
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer;
+    position:fixed;
+    background-color: #143541;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu ul img{
+    padding-right:20px ;
+    max-width: 45px;
+    height: 45px;
+}
+
+.brandname{
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.profile_image{
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+/* admin console header */
+
+/* z index ki wjh sai hamen sidebar dekhny lga */
+.container{
+    position: absolute;
+    right: 0;
+    width: 79vw; 
+    height: 100vh;
+    background-color: rgb(236, 236, 236);
+}
+
+.container .header{
+    position: fixed; 
+    width: 100vw;
+    height: 70px;
+    background-color: #143541;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.searchadmin{
+    margin-top: 15px;
+   float: left;
+}
+.searchadmin img{
+    float: right;
+    margin-left: 10px;
+    margin-top: 8px;
+    height: 35px;
+    width: 35px;
+}
+
+.searchadmin input{
+    border: 2px solid rgb(197, 197, 190);
+    color: white;
+    font-size:15px;
+    height: 40px;
+    border-radius: 10px;
+    background: #143541;;
+    
+
+}
+
+
+.searchadmin ::placeholder{
+    color: white;
+}
+
+.adminlogout{
+    margin-top: 10px;
+    margin-right: 90px;
+}
+
+.adminlogout img{
+
+    max-width: 150px;
+    max-height: 150px;
+    
+}
+
+.mycontent{
+    margin-top: 100px;
+}
+.data{   
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+/* admin console (students tab) */
+
+/* table design */
+
+
+#students_data {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+
+  }
+  
+  #students_data td, #students_data th {
+    border: 3px solid rgb(136, 128, 128);
+    padding: 8px;
+  }
+  
+  #students_data tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #students_data tr:hover {background-color: #ddd;}
+  
+  #students_data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+/* add students button in admin console (student tab) */
+
+.addstu{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* to add or delet students */
+.mycontent button{
+
+    margin-left: 20px;
+
+    font-size: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+
+
+/* student console */
+
+
+.stucard{
+    margin-top: 20px;
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+}
+
+
+.Assignments h2{
+    margin: 0;
+    background-color:#4B1223;
+    font-size: 40px;
+    padding-bottom: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #E1C699;
+}
+
+.Assignments P{
+
+    margin-top: 0px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #E1C699;
+    color: #4B1223;
+}
+
+.yourcourses h2{
+
+    margin: 0;
+    background-color:#101820ff;
+    font-size: 40px;
+    padding-bottom: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fee715ff;
+
+}
+
+.yourcourses P{
+
+    margin-top: 0px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #fee715ff;
+    color: #101820ff;
+}
+
+
+.task h2{
+    margin: 0;
+    background-color:#adefd1ff;
+    font-size: 40px;
+    padding-bottom: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00203fff;
+}
+
+.task p{
+    margin-top: 0px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #00203fff;
+    color: #adefd1ff;
+}
+
+
+
+.stuname{
+    margin-bottom: 20px;
+    padding-top: 50px;
+    width: 100wv;
+    height: 100px;
+    background-color:#4B1223;
+    padding-left: 20px;
+
+}
+
+
+.stuname h2{
+    color: #E1C699;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+
+.stuname p{
+    color: #E1C699;
+    font-size: 20px;
+}
+
+
+.progress{
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100wv;
+    height: 50px;
+background-color: #E1C699;    
+}
+
+
+
+/* student payment detail */
+
+.paymentdetail{
+   margin: 30px auto;
+    width: 40%;
+    height: 150px;
+    border: 2px solid black;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 860px) {
+ 
+
+    .side-menu a{
+        display: none;
+    }
+
+    
+
+    .profile_image{
+        display: none;
+    }
+
+    .brandname{
+        display: none;
+    }
+} 
+
+
+@media screen and (min-width: 0px) and (max-width: 994px) {
+        
+.verline{
+   display: none;
+}
+
+    #menus{
+        height: 90px;
+        }
+        
+        #menus li{
+        padding-top: 20px;
+        padding-right: 30px;
+        list-style: none;
+        
+        
+        }
+        
+        #menus ul a{
+        font-size: 25px;
+        text-decoration: none;
+        color:black;
+        font-family: 'Voltaire', sans-serif;
+        
+        
+        }
+
+        #header_logo{
+
+            width: 20%;
+            height: 90px;
+            margin-left: 190px;
+        }
+
+        header{
+            
+            height: 220px !important;
+        }
+
+     
+        
+
+    }
+
+
+
+
+
