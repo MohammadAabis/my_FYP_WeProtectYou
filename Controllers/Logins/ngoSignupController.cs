@@ -7,7 +7,7 @@ using System.IO;
 using ProtectYou.Models;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using System.Data.Sql;
+using Grpc.Core;
 
 namespace ProtectYou.Controllers.Logins
 {
@@ -37,7 +37,7 @@ namespace ProtectYou.Controllers.Logins
             string regNumber = HttpContext.Request.Form["registrationNumber"];
             string regWith = HttpContext.Request.Form["registerWith"];
             double budget = Convert.ToDouble(HttpContext.Request.Form["currentAnnualBudget"]); 
-            string img = HttpContext.Request.Form["pass"];
+            string img = reg.Image; 
             string pswrd = HttpContext.Request.Form["pass"];
             string cpswrd = HttpContext.Request.Form["re_pass"];
 
@@ -47,7 +47,7 @@ namespace ProtectYou.Controllers.Logins
                 try
                 {
 
-                    if (validate_emailaddress.IsMatch(email) == false) //pswrd.Length < 8
+                    if (validate_emailaddress.IsMatch(email) == false) 
                     {
                         status = "Please Enter Valid Email Address.";
                     }
@@ -62,7 +62,7 @@ namespace ProtectYou.Controllers.Logins
                             }
                             else
                             {
-                                if (pswrd.Length < 8)
+                                if (pswrd.Length < 7)
                                 {
                                     status = "Password must be greater than 8.";
                                 }
@@ -81,15 +81,15 @@ namespace ProtectYou.Controllers.Logins
                                         
                                         using (var command = new SqlCommand(qry, dbConn))
                                         {
-                                            command.Parameters.AddWithValue("@name", name);
-                                            command.Parameters.AddWithValue("@email", email);
-                                            command.Parameters.AddWithValue("@contact", contact);
+                                            command.Parameters.AddWithValue("@name", name ?? (object)DBNull.Value);
+                                            command.Parameters.AddWithValue("@email", email ?? (object)DBNull.Value);
+                                            command.Parameters.AddWithValue("@contact", contact ?? (object)DBNull.Value);
                                             command.Parameters.AddWithValue("@address", address);
                                             command.Parameters.AddWithValue("@regDate",  regDate);
                                             command.Parameters.AddWithValue("@regNumber", regNumber);
                                             command.Parameters.AddWithValue("@regWith", regWith);
                                             command.Parameters.AddWithValue("@budget", budget);
-                                            command.Parameters.AddWithValue("@img", img);
+                                            command.Parameters.AddWithValue("@img", img ?? (object)DBNull.Value);
                                             command.Parameters.AddWithValue("@pswrd", pswrd);
                                             command.ExecuteNonQuery();
                                         }
@@ -140,4 +140,4 @@ namespace ProtectYou.Controllers.Logins
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
     }
-}//'" + name + "', '" + email + "', '" + contact + "', '" + address + "', '" + regDate + "','" + regNumber + "','" + regWith + "','" + budget + "','" + img + "','" + pswrd + "'
+}

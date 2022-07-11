@@ -192,14 +192,16 @@
             var regNumber = document.getElementById("registrationNumber").value;
             var regwith = document.getElementById("registerWith").value;
             var budget = document.getElementById("currentAnnualBudget").value;
-            var img = document.getElementById("image").value;
+            var img = document.getElementById("image").files[0].name;
             var pass = document.getElementById("pass").value;
             var re_pass = document.getElementById("re_pass").value;
+            console.log(document.getElementById("image").files[0].name);
 
             if (name && email && number && address && regDate && regNumber && regwith && budget && img && pass && re_pass) {
                 var url = "/ngoSignup";
                 var myForm = $('#formSignup').serialize();
-                console.log("click");
+                myForm += "&Image=" + img;
+                console.log(myForm);
                 $.post(url, myForm, function (data) {
                     console.log(data);
                     if (data != "Success") {
