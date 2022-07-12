@@ -7,7 +7,7 @@ using System.IO;
 using ProtectYou.Models;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using Grpc.Core;
+using System.Drawing;
 
 namespace ProtectYou.Controllers.Logins
 {
@@ -15,7 +15,7 @@ namespace ProtectYou.Controllers.Logins
     {
         SqlConnection dbConn = new SqlConnection(@"Data Source=DESKTOP-7KVCKFN\SQLEXPRESS;Initial Catalog=ProtectYou;Integrated Security=True;MultipleActiveResultSets=True");
         SqlDataAdapter dAdapter = new SqlDataAdapter();
-
+        
         public IActionResult Signup()
         {
             return View();
@@ -26,6 +26,13 @@ namespace ProtectYou.Controllers.Logins
         {
             string file = Path.GetFileName(reg.Image);
             ViewBag.Message = file;
+
+
+            int cropWidth, cropHeight;
+            //Bitmap croppedImage = new Bitmap(Image.FromFile("uploaded.jpg"), cropWidth, cropHeight);
+
+
+
             Regex validate_emailaddress = email_validation();
 
             string status = "Success";
