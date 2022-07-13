@@ -114,6 +114,7 @@ namespace ProtectYou.Controllers.Logins
 
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
+
     }
 }
 

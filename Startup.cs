@@ -128,6 +128,11 @@ namespace ProtectYou
                 endpoints.MapControllerRoute(
                    name: "NgoSignup",
                    pattern: "{controller=ngoSignup}/{action=Signup}");
+
+
+                endpoints.MapControllerRoute(
+                   name: "NgoSignup",
+                   pattern: "{controller=ImageProcessing}/{action=Index}");
             });
         }
     }

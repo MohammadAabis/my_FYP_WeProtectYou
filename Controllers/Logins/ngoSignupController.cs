@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Drawing;
 
+
 namespace ProtectYou.Controllers.Logins
 {
     public class ngoSignupController : Controller
@@ -28,7 +29,7 @@ namespace ProtectYou.Controllers.Logins
             ViewBag.Message = file;
 
 
-            int cropWidth, cropHeight;
+            //int cropWidth, cropHeight;
             //Bitmap croppedImage = new Bitmap(Image.FromFile("uploaded.jpg"), cropWidth, cropHeight);
 
 
@@ -133,6 +134,7 @@ namespace ProtectYou.Controllers.Logins
             {
                 status = "Form fields should not be empty.";
             }
+                        
 
             return Content(status);
         }
