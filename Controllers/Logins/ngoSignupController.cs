@@ -25,12 +25,8 @@ namespace ProtectYou.Controllers.Logins
         [HttpPost]
         public IActionResult Signup(RegistrationModel reg)
         {
-            string file = Path.GetFileName(reg.Image);
+            string file = Path.GetFileName(reg.Image.ToString());
             ViewBag.Message = file;
-
-
-            //int cropWidth, cropHeight;
-            //Bitmap croppedImage = new Bitmap(Image.FromFile("uploaded.jpg"), cropWidth, cropHeight);
 
 
 

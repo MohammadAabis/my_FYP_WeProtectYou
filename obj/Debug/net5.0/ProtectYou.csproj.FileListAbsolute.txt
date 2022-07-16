@@ -428,6 +428,7 @@ C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\donorSignin\Log
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\donorSignup\Register.cshtml.g.cs
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\Events\Index.cshtml.g.cs
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\ImageProcessing\Index.cshtml.g.cs
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\NeedySignin\Login.cshtml.g.cs
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\NeedySignup\Signup.cshtml.g.cs
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\ngoSignup\Signup.cshtml.g.cs
@@ -447,4 +448,3 @@ C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.dll
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ref\ProtectYou.dll
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.pdb
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.genruntimeconfig.cache
-C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\ImageProcessing\Index.cshtml.g.cs

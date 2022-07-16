@@ -1,4 +1,5 @@
-﻿
+﻿@model ProtectYou.Models.RegistrationModel;
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,4 +8,59 @@
 @{
     @ViewBag.image
 }
+<body>
+
+    <form method="post" action="/imageprocessing" id="formimg" enctype="multipart/form-data">
+        <div id="contentMessage">
+
+        </div>
+        <div class="form-group">
+            <label for="image"><i class="zmdi zmdi-camera"></i></label>
+            <input type="file" name="image" id="image" placeholder="Upload Image" required />
+        </div>
+
+        <div class="form-group form-button">
+            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+
+        </div>
+    </form>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <!-- <script>
+
+        $('#signup').click(function (e) {
+            e.preventDefault();
+            console.log("hi");
+            var img = document.getElementById("image").files[0];
+            console.log(img.file);
+
+
+            if (true) {
+                var url = "/ImageProcessing";
+                //var myForm = $('#formimg').serialize();
+                var formData = {};
+                formData = { 'file': img };
+                formData = { 'name': 'my name is' };
+                //myForm += "&Image=" + img;
+                console.log(formData);
+                $.post(url, img.file, function (data) {
+                    console.log(data);
+                    if (data != "Success") {
+                        document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">' + data + '</div >';
+                    }
+
+                });
+            } else {
+                document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">Form fields should not empty.</div >';
+            }
+
+
+
+
+        })
+
+    </script>  -->
+</body>
+
 

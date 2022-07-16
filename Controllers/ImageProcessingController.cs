@@ -7,6 +7,11 @@ using System.IO;
 using System.Drawing;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Hosting;
+using ProtectYou.Models;
+using System.Net.Http;
+using System.Net;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace ProtectYou.Controllers
 {
@@ -14,10 +19,12 @@ namespace ProtectYou.Controllers
     {
         byte[] _barray1;
         byte[] _barray2;
-        private object webHostEnvironment;
 
+       
         public IActionResult Index()
         {
+            
+
             string FilePath = @"C:\Users\hp\source\repos\ProtectYou\wwwroot\img\about.jpg";
             FileStream fstream = new FileStream(FilePath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
 
@@ -32,5 +39,23 @@ namespace ProtectYou.Controllers
 
             return View();
         }
+        
+
+        //[Route("api/FileAPI/UploadFiles")]
+        [HttpPost]
+        public IActionResult Index(RegistrationModel reg)
+        {
+            
+            string FilePath = Path.GetTempPath() + Request.Form.Files[0].FileName;
+            FileStream fstream = new FileStream(FilePath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+            ViewBag.image = Request.Form.Files[0].FileName;
+            //ViewBag.image = httpRequest.Form.Files.Count;
+
+
+            return View();
+        }
+
+        
     }
 }
