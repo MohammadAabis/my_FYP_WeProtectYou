@@ -448,3 +448,4 @@ C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.dll
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ref\ProtectYou.dll
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.pdb
 C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\ProtectYou.genruntimeconfig.cache
+C:\Users\hp\source\repos\ProtectYou\obj\Debug\net5.0\Razor\Views\UploadPost\UploadPost.cshtml.g.cs

@@ -113,6 +113,10 @@ namespace ProtectYou
                    name: "Signin_Needy_Person",
                    pattern: "{controller=NeedySignin}/{action=Login}");
 
+                endpoints.MapControllerRoute(
+                   name: "Upload a Post",
+                   pattern: "{controller=UploadPost}/{action=UploadPost}");
+
                 /*================Donor=================*/
 
                 endpoints.MapControllerRoute(

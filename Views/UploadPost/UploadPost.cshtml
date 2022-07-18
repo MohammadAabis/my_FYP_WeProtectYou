@@ -1,0 +1,95 @@
+﻿@model ProtectYou.Models.PostRequirements;
+
+@{
+    ViewData["Title"] = "UploadPost";
+}
+<head>
+
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/main.js"></script>
+    
+    <style>
+
+        #description
+        {
+            height : 50px;
+            width : 300px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <form method="post" action="/UploadPost" id="post">
+        <div id="contentMessage">
+
+        </div>
+
+        <div class="form-group">
+            <label for="requirement"><i class="zmdi zmdi-money-box"></i></label>
+            &nbsp;&nbsp;&nbsp;Select your requirement &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="requirement" id="requirement" required>
+                <option value="Money">Money</option>
+                <option value="Cloths">Cloths</option>
+                <option value="Blankets">Blankets</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Other Items">Other Items</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="money"><i class="zmdi zmdi-money"></i></label>
+            &nbsp;&nbsp;&nbsp;Enter Money or quantity of items you select &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" name="money" id="money" value="1" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description"><i class=""></i></label>
+            &nbsp;&nbsp;&nbsp;Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="description" id="description" required />
+        </div>
+
+        <div class="form-group form-button">
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="upload" id="upload" class="form-submit" value="Upload" />
+
+        </div>
+    </form>
+
+    <script type="text/jscript">
+        $('#upload').click(function (e) {
+            e.preventDefault();
+
+            var requirement = document.getElementById("requirement").value;
+            var quantity = document.getElementById("money").value;
+            var description = document.getElementById("description").value;
+
+            if (requirement && quantity && description) {
+                var url = "/UploadPost";
+                var myForm = $('#post').serialize();
+                console.log("click");
+                $.post(url, myForm, function (data) {
+                    console.log(data);
+                    if (data != "Success") {
+                        document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">' + data + '</div >';
+                    }
+
+                });
+            } else {
+                document.getElementById("contentMessage").innerHTML = '<div class="alert alert-danger" role="alert">Form fields should not empty.</div >';
+            }
+
+
+
+
+        })
+
+        
+
+    </script>
+
+</body>
