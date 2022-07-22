@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,17 @@ using System.Threading.Tasks;
 using ProtectYou.Models;
 using System.Data.SqlClient;
 
+
+
+
 namespace ProtectYou.Controllers.Logins
 {
     public class NeedySigninController : Controller
     {
+        
         SqlConnection dbConn = new SqlConnection(@"Data Source=DESKTOP-7KVCKFN\SQLEXPRESS;Initial Catalog=ProtectYou;Integrated Security=True;MultipleActiveResultSets=True");
+
+        //public  Session { get;  set; }
 
         public IActionResult Login()
         {
@@ -45,6 +52,8 @@ namespace ProtectYou.Controllers.Logins
                     if (emailpost.Equals(email) && passpost.Equals(pass))
                     {
                         status = "Success";
+                        //Session["Name"] = reg.Name.ToString();
+                        
                     }
                 }
                 dbConn.Close();
